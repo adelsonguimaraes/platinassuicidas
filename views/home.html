@@ -1,0 +1,59 @@
+<!-- Home -->
+<div class="main-home">
+	<section class="descricao">
+		<h3>Descubra o Segredo</h3>
+		<div>
+			<a>Interrogações: {{interrogacoes}}</a>
+			<a>Acertos: {{pista}}</a>
+		</div>
+	</section>
+	<section class="instrucoes" ng-if="!iniciado">
+		<p>
+			Entre os personagens existe um segredo guardado, mas para desvenda-lo você precisará interroga-los e encontrar 5 partes do segredo.
+			
+			<br><br><b>Regras do jogo:</b><br><br>
+
+			1. Você tem <b>{{interrogacoes}}</b> tentativas de Interrogação.<br>
+			2. Click sobre um personagem para interroga-lo.<br>
+			3. Acerto libera um segredo e desativa um personagem.<br>
+			4. A cada erro uma tentativa de interrogação é perdida.<br>
+			5. Encontre as 5 partes e desvende o mistério.<br>
+			6. Zere suas tentativas e o jogo será reiniciado.<br>
+			7. As pistas trocam de personagens a cada jogada.<br>
+			8. Apenas <b>{{time}}</b> para descobrir o segredo.<br>
+			9. Escolha com cuidado.<br><br>
+			
+			<b>Radar</b><br>
+			1. Acionando o Radar 3 suspeitos são encontrados, 1 deles terá a parte do segredo.<br>
+			2. O primeiro acionamento é grátis.<br>
+			3. Interrogações não são cobradas quando o radar é ativado.<br>
+		</p>
+		<div class="placar" ng-if="usuario.nome!==''">
+			<a><b>Investigador:</b> {{usuario.nome}}</a>
+			<div>
+				<a><b>Vitórias:</b> {{usuario.vitorias}}</a>
+				<a><b>Derrotas:</b> {{usuario.derrotas}}</a>
+			</div>
+		</div>
+		<center>
+			<div class="form-group">
+				<input type="text" maxlength="10" placeholder="Digite seu nome" ng-model="obj.nome" class="form-control" ng-if="usuario.nome===''">
+			</div>
+			<button class="btn btn-default btn-lg" ng-click="iniciar(obj)" ng-disabled="obj.nome==='' && usuario.nome===''">Começar o jogo</button>
+		</center>
+	</section>
+	<section class="cards-view" ng-if="iniciado">
+		<div class="card" ng-repeat="c in cards" ng-click="clicado(c, $index)" ng-class="{'card-dasativada' : c.desativado}">
+			<div class="card-name">{{$index}} {{c.nome}}</div>
+			<img class="suspeito" ng-src="libs/img/radar.png" ng-if="c.suspeito">
+			<img ng-src="{{c.src}}" alt="">
+		</div>
+		<div class="time">
+			<a class="animated pulse infinite">{{time}}</a>
+			<a class="radar">
+				<img height="40px" src="libs/img/radar.png" ng-click="acionarRadar()" ng-class="{'card-dasativada' : suspeitos.length>0}">
+			</a>
+		</div>
+	</section>
+</div>
+<!-- <div class="toast animated bounce">Essa é uma página de Teste</div> -->

@@ -1,0 +1,133 @@
+html, body {
+	margin: 0;
+	padding: 0;
+}
+.main-home {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+.main-home .descricao {
+	width: 100%;
+	text-align: center;
+	background: #333;
+	color: aliceblue;
+	position: fixed;
+	z-index: 3;
+}
+.main-home .descricao div {
+	padding: 5px;
+	display: grid;
+	grid-template-columns: 50% 50%;
+}
+.main-home .descricao div a {
+	color: black;
+	border: 1px solid black;
+	font-size: 16px;
+	font-weight: bold;
+	text-decoration: none;
+	background: #fff;
+}
+.main-home .instrucoes {
+	text-align: justify;
+	padding: 100px 20px 20px 20px;
+}
+.main-home .cards-view {
+	padding: 100px 10px;
+	display: grid;
+	grid-template-columns: auto auto;
+}
+.main-home .cards-view .card {
+	padding: 10px;
+	width: 166px;
+	height: 160px;
+	overflow: hidden;
+	cursor: pointer;
+	position: relative;
+}
+.main-home .cards-view .card-dasativada{
+	filter: brightness(30%);
+}
+.main-home .cards-view .card .card-name {
+	background: #393939;
+	width: 110%;
+	padding: 2px 5px;
+	color: aliceblue;
+	font-weight: bold;
+}
+.main-home .cards-view .card-cliked {
+	border: 2px solid red;
+}
+.main-home .cards-view .card img {
+	height: 400px;
+	display: block;
+}
+.main-home .cards-view .card div {
+	display: block;
+	width: 100%;
+}
+.main-home .cards-view .card .suspeito {
+	height: 55px;
+	position: absolute;
+    right: 2;
+}
+.segredo {
+	height: 120px;
+	overflow: hidden;
+	/* display: inline; */
+}
+.segredo img {
+	/* width: 200px; */
+	height: 450px;
+}
+.time {
+	width: 100%;
+	text-align: center;
+	bottom:0;
+	right:0;
+	position: fixed;
+	font-size: 22px;
+	font-weight: bold;
+	padding: 10px;
+	background: #333;
+}
+.time a {
+	color: #d84e4e;
+	text-decoration: none;
+}
+.time .radar {
+	background: #fff;
+	padding:2px;
+	border-radius: 50%;
+	position: absolute;
+	right: 5px;
+	bottom: 3px;
+}
+.main-home .placar {
+	width: 100%;
+	background: #333;
+	padding: 10px;
+	text-align: center;
+}
+.main-home .placar div {
+	display: grid;
+	grid-template-columns: auto auto;
+}
+.main-home .placar a{
+	color: aliceblue;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+}
+
+@media (min-width: 720px) {
+	.main-home .cards-view {
+		grid-template-columns: auto auto auto auto;
+	}
+	.main-home {
+		margin: 0 auto;
+		width: 80%;
+	}
+	.main-home .descricao {
+		width: 80%;
+	}
+}
