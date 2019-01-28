@@ -204,10 +204,10 @@ var homeCtrl = function ($scope, $rootScope, $location, genericAPI, $uibModal, S
 	}
 
 	$scope.segredos = [
-		"\"Eu estava lá, todos estavam, mas poucos vão querer falar alguma coisa... afinal quem nunca..\"",
-		"\"É meu amigo, o rombo foi grande, eles estão agora atrás de quem cometeu esse furo.. alguém vai ter problemas...\"",
-		"\"Eu não estava lá... eu juro... não me olhe com essa cara de desconfiado, mas eu ouvi coisas... disseram que foi um grande roubo no Banco dos Diamantes.. bem.. foi o que eu ouvi..\"",
-		"\"Naquela noite a cidade sofria um blackout, uma forte chuva atingia a cidade de Peak a Mars Eletric ninguém via nada eu estava ilhado próximo ao banco dos diamantes esperando o temporal passar, então eu vi, ele aproveitou pra saquear o banco, tudo por causa daquela roupa cara...\""
+		"\"Um lugar onde muitos morrem... muitos caem perto, mas poucos ousam entrar... mesmo se correr da janela podem ti acertar...\"",
+		"\"Alto e perigoso... mas escadas podem alcançar... caixotes e sem divisórias no segundo andar..\"",
+		"\"Em baixo a divisórias, até um carro pode-se estacionar... uma garagem e dois cômodos, geralmente mesas existem lá...\"",
+		"\"Com certeza lá você já morreu... existem armas e outros itens.... mas só cavalos pelo nome que chavam lá deviam se alocar...\""
 	];
 
 	var verificaDeativados = function (x, setado) {
@@ -228,7 +228,7 @@ var homeCtrl = function ($scope, $rootScope, $location, genericAPI, $uibModal, S
 			x = (Math.random() * 17).toFixed(0);
 		}
 		setado = x;
-		// console.log(setado);
+		console.log(setado);
 	}
 	setaPersonagem();
 
@@ -246,7 +246,7 @@ var homeCtrl = function ($scope, $rootScope, $location, genericAPI, $uibModal, S
 			if ($scope.pista>=5) {
 				SweetAlert.swal({
 					title: "Incrível!!!",
-					text: '<b>Parabéns você venceu com '+$scope.time+'!<br>O Frango fez um grande rombo no banco de diamantes só pra conseguir essa roupa!</b><br><br><div class="segredo"><img src="'+$scope.cards[7].src+'"></div>',
+					text: '<b>Parabéns você venceu com ' + $scope.time +'!<br>No fim da charada você chegou, o Celeiro do Free Fire Desbloqueou!</b><br><br><div class="segredo"><img src="libs/img/celeiro_free_fire.PNG"></div>',
 					type: "success",
 					html: true,
 					confirmButtonColor: "#5cb85c",
