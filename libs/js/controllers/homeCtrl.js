@@ -153,7 +153,7 @@ var homeCtrl = function ($scope, $rootScope, $location, genericAPI, $uibModal, S
 	];
 
 	var setado = 0;
-	$scope.interrogacoes = 15;
+	$scope.interrogacoes = 20;
 	$scope.pista = 0;
 	$scope.time = '00:01:00';
 	$scope.iniciado = false;
@@ -167,7 +167,7 @@ var homeCtrl = function ($scope, $rootScope, $location, genericAPI, $uibModal, S
 		}
 	}
 	var reset = function () {
-		$scope.interrogacoes = 15;
+		$scope.interrogacoes = 20;
 		$scope.pista = 0;
 		setado = 0;
 		$scope.iniciado = false;
@@ -228,7 +228,7 @@ var homeCtrl = function ($scope, $rootScope, $location, genericAPI, $uibModal, S
 			x = (Math.random() * 17).toFixed(0);
 		}
 		setado = x;
-		console.log(setado);
+		// console.log(setado);
 	}
 	setaPersonagem();
 
